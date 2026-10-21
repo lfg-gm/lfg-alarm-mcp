@@ -1,6 +1,6 @@
 ---
 name: lfg-alarm
-description: Put a real alarm on your person's phone, and on their friends', family's or community's phones, through LFG Alarm's MCP server (https://mcp.lfg.gm). Set, share and change alarms that ring together. Use it when someone asks to be woken, reminded loudly, or rung for a moment: a time, an event from a Luma or Partiful link, an account posting on X, a stream going live, a token hitting a price, or a webhook being called; or when they want a group, a partner or a family rung together at the same moment.
+description: "Put a real alarm on your person's phone, and on their friends', family's or community's phones, through LFG Alarm's MCP server (https://mcp.lfg.gm). Set, share and change alarms that ring together. Use it when someone asks to be woken, reminded loudly, or rung for a moment: a time, an event from a Luma or Partiful link, an account posting on X, a stream going live, a token hitting a price, or a webhook being called; or when they want a group, a partner or a family rung together at the same moment."
 ---
 
 # LFG Alarm

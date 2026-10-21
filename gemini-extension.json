@@ -1,0 +1,11 @@
+{
+  "name": "lfg-alarm",
+  "version": "1.0.1",
+  "description": "Let your AI ring a real alarm on any phone or laptop, at any time or for any moment online.",
+  "mcpServers": {
+    "lfg-alarm": {
+      "httpUrl": "https://mcp.lfg.gm"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "lfg-alarm",
+  "displayName": "LFG Alarm",
+  "version": "1.0.0",
+  "description": "Set real alarms that ring on your phone, and on your friends' phones, from Cursor: wake-up times, events, a social media post, a price move, a public trade, or a webhook. Ring a phone when a build or job finishes.",
+  "author": {
+    "name": "LFG",
+    "email": "connect@lfg.gm"
+  },
+  "homepage": "https://lfg.gm/agents/cursor",
+  "repository": "https://github.com/lfg-gm/lfg-alarm-mcp",
+  "license": "MIT",
+  "keywords": ["alarm", "alarms", "phone", "notifications", "reminders", "webhook", "mcp"],
+  "logo": "logo-400x400.png"
+}

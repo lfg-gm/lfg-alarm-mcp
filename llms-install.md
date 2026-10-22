@@ -15,7 +15,13 @@ LFG Alarm is a hosted, remote MCP server. There is nothing to download, build or
 { "mcpServers": { "lfg-alarm": { "url": "https://mcp.lfg.gm" } } }
 ```
 
-   In Cline: open MCP Servers, choose **Remote Servers**, name it `lfg-alarm`, paste `https://mcp.lfg.gm` and add it.
+   In Cline: add it to `cline_mcp_settings.json` with the transport named, or Cline tries the older SSE transport and gets a 405:
+
+```json
+{ "mcpServers": { "lfg-alarm": { "type": "streamableHttp", "url": "https://mcp.lfg.gm" } } }
+```
+
+   Or open MCP Servers, choose **Remote Servers**, name it `lfg-alarm`, paste `https://mcp.lfg.gm`, pick **Streamable HTTP** and add it.
 
 2. Connect. When the client asks, open the sign-in page and let the user sign in on lfg.gm. Do not ask the user for their password in chat.
 3. Check it works by calling `list_my_alarms`. A list (or "no alarms yet") means it is connected.

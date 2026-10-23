@@ -11,6 +11,9 @@
   "homepage": "https://lfg.gm/agents/claude",
   "repository": "https://github.com/lfg-gm/lfg-alarm-mcp",
   "privacyPolicyUrl": "https://lfg.gm/legal#privacy",
+  "termsOfServiceUrl": "https://lfg.gm/legal",
+  "supportUrl": "https://lfg.gm/support",
+  "documentationUrl": "https://lfg.gm/developers",
   "license": "MIT",
   "keywords": [
     "alarm",

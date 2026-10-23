@@ -1,0 +1,14 @@
+{
+  "name": "lfg",
+  "description": "LFG Alarm's plugins for Claude Code: set real alarms that ring on your phone, and your friends' phones.",
+  "owner": {
+    "name": "LFG Alarm",
+    "email": "connect@lfg.gm"
+  },
+  "plugins": [
+    {
+      "name": "lfg-alarm",
+      "source": "./"
+    }
+  ]
+}

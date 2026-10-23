@@ -28,6 +28,14 @@ Add LFG Alarm as an app with the address `https://mcp.lfg.gm`, then sign in. [Gu
 
 ### Claude Code
 
+As a plugin (the server plus the LFG Alarm skill), in a Claude Code session:
+
+```
+/plugin install lfg-alarm --marketplace lfg-gm/lfg-alarm-mcp
+```
+
+Or just the server:
+
 ```bash
 claude mcp add --transport http --scope user lfg-alarm https://mcp.lfg.gm
 ```

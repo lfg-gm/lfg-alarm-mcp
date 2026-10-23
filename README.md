@@ -6,6 +6,8 @@ Let your AI ring a real alarm on any phone or laptop, at any time or for any mom
 
 [LFG Alarm](https://lfg.gm) is a social alarm clock for iPhone and Android. Rocco, LFG's agent, monitors the web and wakes you, and your friends, when it matters: at a time, when a token moves, when someone posts or goes live, when a trader or a wallet trades, before an event, or when anything online calls a private link. This server lets any AI app that speaks MCP make and manage those alarms for you, in plain words.
 
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=lfg-alarm&config=eyJ1cmwiOiJodHRwczovL21jcC5sZmcuZ20ifQ%3D%3D) [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_LFG_Alarm-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=lfg-alarm&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.lfg.gm%22%7D)
+
 - **Server:** `https://mcp.lfg.gm`
 - **Transport:** Streamable HTTP (remote; nothing to install)
 - **Sign-in:** OAuth. The first time, a page on lfg.gm opens; sign in with your LFG Alarm account and tap **Allow**. For tools without sign-in, use a personal key from the app's Settings as a `Bearer` header.

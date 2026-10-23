@@ -3,9 +3,22 @@
   "displayName": "LFG Alarm",
   "version": "1.0.0",
   "description": "Set real alarms that ring on your phone, and your friends' phones: a time, an event, a social media post, a price move, a public trade or a webhook. Or ring your phone when a long job finishes.",
-  "author": { "name": "LFG Alarm", "email": "connect@lfg.gm", "url": "https://lfg.gm" },
+  "author": {
+    "name": "LFG Alarm",
+    "email": "connect@lfg.gm",
+    "url": "https://lfg.gm"
+  },
   "homepage": "https://lfg.gm/agents/claude",
   "repository": "https://github.com/lfg-gm/lfg-alarm-mcp",
+  "privacyPolicyUrl": "https://lfg.gm/legal#privacy",
   "license": "MIT",
-  "keywords": ["alarm", "alarms", "phone", "notifications", "reminders", "webhook", "mcp"]
+  "keywords": [
+    "alarm",
+    "alarms",
+    "phone",
+    "notifications",
+    "reminders",
+    "webhook",
+    "mcp"
+  ]
 }

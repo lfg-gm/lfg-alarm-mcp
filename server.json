@@ -3,7 +3,11 @@
   "name": "gm.lfg/alarm",
   "title": "LFG Alarm",
   "description": "Let your AI ring a real alarm on any phone or laptop, at any time or for any moment online.",
-  "version": "1.0.1",
+  "repository": {
+    "url": "https://github.com/lfg-gm/lfg-alarm-mcp",
+    "source": "github"
+  },
+  "version": "1.0.2",
   "websiteUrl": "https://lfg.gm/agents",
   "remotes": [
     {

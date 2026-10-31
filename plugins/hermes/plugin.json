@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "lfg-alarm",
+  "version": "1.0.0",
+  "description": "Put a real alarm on your phone from Hermes, and on your friends', family's or community's phones, ringing together. For a time, an event, a post, a stream going live, a token price, or anything that can call a link.",
+  "author": {
+    "name": "LFG Alarm",
+    "url": "https://lfg.gm"
+  },
+  "homepage": "https://lfg.gm/agents/hermes-agent",
+  "repository": "https://github.com/lfg-gm/lfg-alarm-mcp",
+  "license": "MIT",
+  "keywords": ["alarm", "alarm-clock", "reminders", "notifications", "wake-up", "friends", "mcp"],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "lfg-alarm": { "trust": "untrusted" }
+      }
+    }
+  }
+}

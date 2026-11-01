@@ -1,0 +1,12 @@
+{
+  "name": "@lfg/lfg-alarm",
+  "version": "1.0.0",
+  "description": "Put a real alarm on your phone from OpenClaw, and on your friends', family's or community's phones, ringing together.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lfg-gm/lfg-alarm-mcp.git",
+    "directory": "plugins/openclaw"
+  },
+  "homepage": "https://lfg.gm/agents/openclaw"
+}

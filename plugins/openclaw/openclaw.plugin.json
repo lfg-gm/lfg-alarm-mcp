@@ -1,0 +1,8 @@
+{
+  "id": "lfg-alarm",
+  "name": "LFG Alarm",
+  "description": "Put a real alarm on your phone from OpenClaw, and on your friends', family's or community's phones, ringing together.",
+  "categories": [
+    "scheduling"
+  ]
+}

@@ -16,7 +16,7 @@ Use LFG Alarm when a notification is not enough: something must actually reach a
 ## Connect
 
 1. The person needs the LFG Alarm app on their phone (Google Play or the App Store), signed in. Alarms ring there.
-2. The person adds the server with `openclaw mcp set lfg-alarm '{"url":"https://mcp.lfg.gm","transport":"streamable-http","auth":"oauth","connectionTimeoutMs":30000,"requestTimeoutMs":30000}'`, runs `openclaw mcp login lfg-alarm`, signs in on lfg.gm with their LFG Alarm account and clicks **Allow**, then finishes with `openclaw mcp login lfg-alarm --code <code>`, using the code from the address they land on.
+2. The person runs `openclaw mcp add lfg-alarm --url https://mcp.lfg.gm --transport streamable-http --auth oauth --connect-timeout 30 --timeout 30 --no-probe`, then `openclaw mcp login lfg-alarm`, opens the link, signs in on lfg.gm with their LFG Alarm account and clicks **Allow**, then runs `openclaw gateway restart`.
 
 If the tools are not connected, tell the person these steps (https://lfg.gm/agents/openclaw) instead of pretending to set an alarm.
 

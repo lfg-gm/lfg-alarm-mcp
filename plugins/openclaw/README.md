@@ -19,7 +19,7 @@ There's no code in this plugin. You add the server yourself in step 2, so it sig
 
 ## Get started
 
-You need the LFG Alarm app on your phone, from [lfg.gm](https://lfg.gm). That's where alarms ring.
+You need the LFG Alarm app on your phone, from [lfg.gm](https://lfg.gm), because that's where alarms ring. You also need a current OpenClaw: run `openclaw update` if you installed it a while ago.
 
 1. Install the plugin:
 
@@ -27,20 +27,25 @@ You need the LFG Alarm app on your phone, from [lfg.gm](https://lfg.gm). That's 
    openclaw plugins install clawhub:@lfg/lfg-alarm
    ```
 
-2. Add the server and start sign-in. The longer time limits stop the first connection timing out:
+2. Add LFG Alarm:
 
    ```
-   openclaw mcp set lfg-alarm '{"url":"https://mcp.lfg.gm","transport":"streamable-http","auth":"oauth","connectionTimeoutMs":30000,"requestTimeoutMs":30000}'
+   openclaw mcp add lfg-alarm --url https://mcp.lfg.gm --transport streamable-http --auth oauth --connect-timeout 30 --timeout 30 --no-probe
+   ```
+
+3. Sign in. Open the link it prints, sign in on lfg.gm and tap **Allow**:
+
+   ```
    openclaw mcp login lfg-alarm
    ```
 
-   Open the link, sign in on lfg.gm and tap **Allow**. Your browser lands on a `127.0.0.1:8989` address, and the page may not load. Copy everything after `code=` and before `&state` from the address bar, then finish:
+4. Restart OpenClaw, then ask for an alarm:
 
    ```
-   openclaw mcp login lfg-alarm --code YOUR_CODE
+   openclaw gateway restart
    ```
 
-3. Ask for an alarm.
+Want OpenClaw to ask before it changes anything? Run `openclaw mcp configure lfg-alarm --approval prompt`. If nobody is there to answer, such as a scheduled job, the request is refused.
 
 ## What gets sent
 
@@ -49,8 +54,9 @@ You need the LFG Alarm app on your phone, from [lfg.gm](https://lfg.gm). That's 
 - **Tools can change things.** They make, change and delete alarms, and can ring every phone on an alarm you made.
 - **The tool list comes from our server** when OpenClaw connects, so it can change without a new version of this plugin.
 - **Your plan's limits apply**, as they do in the app.
+- **Connected the LFG Alarm app in ChatGPT too?** OpenClaw may use that connection instead, which can be a different LFG account.
 
-To disconnect, remove the server in OpenClaw, then remove it under AI apps and keys in your LFG settings. Your alarms stay in your account.
+To disconnect, run `openclaw mcp remove lfg-alarm`, then remove OpenClaw under AI apps and keys in your LFG settings. Your alarms stay in your account.
 
 ## Support
 

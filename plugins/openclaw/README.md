@@ -39,7 +39,7 @@ You need the LFG Alarm app on your phone, from [lfg.gm](https://lfg.gm), because
    openclaw mcp login lfg-alarm
    ```
 
-4. Restart OpenClaw, then ask for an alarm:
+4. Restart OpenClaw, then ask for an alarm. Give it a minute to load LFG Alarm's tools first:
 
    ```
    openclaw gateway restart
@@ -56,7 +56,7 @@ Want OpenClaw to ask before it changes anything? Run `openclaw mcp configure lfg
 - **Your plan's limits apply**, as they do in the app.
 - **Connected the LFG Alarm app in ChatGPT too?** OpenClaw may use that connection instead, which can be a different LFG account.
 
-To disconnect, run `openclaw mcp remove lfg-alarm`, then remove OpenClaw under AI apps and keys in your LFG settings. Your alarms stay in your account.
+To disconnect, run `openclaw mcp unset lfg-alarm`, then remove OpenClaw under AI apps and keys in your LFG settings. Your alarms stay in your account.
 
 ## Support
 

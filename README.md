@@ -101,9 +101,11 @@ Any MCP client that supports remote Streamable HTTP servers works with `https://
 | `set_drop_alarm` | Ring when an artist drops a new track, or only an album or EP, on SoundCloud |
 | `find_soundcloud_artist` | Find the right artist on SoundCloud by name or link |
 | `set_trader_alarm` | Ring when a trader, a token's traders or a wallet buys or sells (Solana and EVM chains) |
-| `set_event_alarm` | Ring before an event, from its page (Luma, Partiful, Eventbrite, Posh and any page that publishes its event) |
-| `set_sun_alarm` | Ring at a sun or moon moment at a place: sunrise, golden hour, sunset, moonrise and more |
+| `set_event_alarm` | Ring before an event, from its page (Luma, Partiful, Eventbrite, Ticketmaster, Posh and more) |
+| `set_sun_alarm` | Ring at a sun or moon moment at a place: sunrise, golden hour, sunset, moonrise and more, or a sky event such as a meteor shower or a supermoon |
+| `set_tide_alarm` | Ring at a tide at the station nearest a place: low, high, a negative low or a king tide |
 | `sun_times` | Get a place's sun and moon times for a day |
+| `tide_times` | Get a day's high and low tides at the station nearest a place |
 | `set_watch_alarm` | Ring when a web page or a topic says what you are waiting for, with a brief if you want one |
 | `set_webhook_alarm` | Ring when anything calls a private web address |
 | `ring_alarm` | Ring one of your webhook alarms now |

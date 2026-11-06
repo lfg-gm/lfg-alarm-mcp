@@ -18,15 +18,20 @@ Use LFG Alarm when a notification is not enough: something must actually reach a
 1. The person needs the LFG Alarm app on their phone (Google Play or the App Store), signed in. Alarms ring there.
 2. The person runs `openclaw mcp add lfg-alarm --url https://mcp.lfg.gm --transport streamable-http --auth oauth --connect-timeout 30 --timeout 30 --no-probe`, then `openclaw mcp login lfg-alarm`, opens the link, signs in on lfg.gm with their LFG Alarm account and clicks **Allow**, then runs `openclaw gateway restart`.
 
+Writing code instead? The SDK (`npm install lfg-alarm` or `pip install lfg-alarm`, with Vercel AI SDK tools and a LangChain toolkit, `langchain-lfg`) does the same: https://lfg.gm/developers. To ring a phone from a script with no key, POST to an Anything alarm's link: `curl -X POST https://api.lfg.gm/horn/<token>`. There is no LFG command-line tool.
+
 If the tools are not connected, tell the person these steps (https://lfg.gm/agents/openclaw) instead of pretending to set an alarm.
+
+**For an event, without the tools:** hand the person a Set an LFG alarm link, and they tap it to set the alarm in the app. It needs no connection and no key. Give the event page (`https://lfg.gm/add?url=<the event page, encoded>`), or, when you already know the event, its details: `https://lfg.gm/add?title=<name>&start=<ISO time with its offset, like 2026-11-14T20:00:00-08:00>&location=<place>&url=<page>`, every value encoded. Never guess the start or its time zone; leave `start` out and the person picks the time. Nothing is set until they tap Create alarm, so say "tap this to set it", never "I set it". Details: https://lfg.gm/developers#add-button
 
 ## What the tools do
 
-- **Make an alarm:** `set_time_alarm` (a time, once or on chosen days), `set_event_alarm` (a Luma or Partiful link, rung at the start or 30 minutes, 1 hour or 2 hours before), `set_post_alarm` (an X account posting what the person describes, or a Twitch or YouTube channel going live or posting), `set_price_alarm` (a target price or a percent move; call `find_token` first for the token's id), `set_trader_alarm` (a trader on FOMO or a KOL GMGN tracks buys, sells or posts a thesis; anyone trades a token, by contract address; or a wallet buys or sells), `set_webhook_alarm` (a private link any system can call to ring it).
+- **Make an alarm:** `set_time_alarm` (a time, once or on chosen days), `set_event_alarm` (a Luma or Partiful link, rung at the start or 30 minutes, 1 hour or 2 hours before), `set_post_alarm` (an X account posting what the person describes, or a Twitch or YouTube channel going live or posting), `set_drop_alarm` (an artist posting a new track, or only an album or EP, on SoundCloud; takes the artist's SoundCloud link, from `find_soundcloud_artist`), `set_price_alarm` (a target price or a percent move; call `find_token` first for the token's id), `set_trader_alarm` (a trader on FOMO or a KOL GMGN tracks buys, sells or posts a thesis; anyone trades a token, by contract address; or a wallet buys or sells), `set_webhook_alarm` (a private link any system can call to ring it), then `ring_alarm` to ring it on demand. `set_watch_alarm` (a monitoring alarm: Rocco reads a web page or a topic on a schedule and rings when what the person is waiting for comes true, with a brief if they want one). `set_sun_alarm` (a sun & moon alarm: sunrise, golden hour, sunset, dusk, moonrise and more at a place, up to two hours either side, and optionally only on a full or new moon, an equinox or a solstice; computed for the place each day).
 - **Dress it:** `search_library` for 500+ sounds by mood, energy or voice and drawn looks by vibe, then `set_media`; or the person's own files with `list_my_media`, `get_upload_link`, `add_media_from_url` or `add_media_file`.
 - **Manage:** `list_my_alarms`, `update_alarm`, `turn_alarm_on_off`, `delete_alarm`.
 - **People:** `list_friends` (friends and groups), `list_riders`, `list_join_requests`, `answer_join_request`, `get_invite_card` (the person's own invite link and referral code), `use_invite_code` (a friend's code, once per account).
 - **Got a link:** `open_link` reads anything pasted (an LFG alarm or invite link, or a Partiful or Luma event, with its picture and description), `join_alarm` joins someone else's alarm (or asks its creator to be let in).
+- **The sky:** `sun_times` gives a place's sun and moon times for a day, the moon's phase, the next full and new moon and the next equinox or solstice, in the place's time zone. Read only.
 - **Social:** `browse_discover` (public alarms anyone can join), `read_comments`, `post_comment`, `heart_alarm`, `get_wake_board` (who got up first, and who is still asleep).
 
 The tools never generate songs, images or video, never move money or crypto, and never see the conversation.
@@ -36,6 +41,7 @@ The tools never generate songs, images or video, never move money or crypto, and
 - **Get the time zone right.** Pass the person's IANA time zone. For a shared alarm across cities, ask whether everyone rings at the same moment (`ring_at: together`, the default) or each at their own local time (`ring_at: local`).
 - **Reach:** private (just them), friends (people they name), or public (anyone with the link; shows in Discover). Default to private unless they mention other people. People can only be added to a friends alarm.
 - **Adding people:** use their LFG Alarm friends by username, a friend group by name (`add_groups`), or anyone by email. Never guess who someone is. The first call only lists who would be added; read the names back, get a yes, then call again with `people_confirmed: true`. Up to 20 people at a time.
+- **Get the artist right.** Many SoundCloud accounts share a name and most are empty. Call `find_soundcloud_artist`, show the person who it found (followers and tracks tell the real artist apart), and pass the link they pick to `set_drop_alarm`. Never make a link up from a name.
 - **Get the token or wallet right.** A name or ticker can match copycats. Find the contract (`find_token`, or your own research), read it back to the person, and use the address they confirm. A trader's handle is looked up on FOMO, then among the KOLs GMGN tracks.
 - **Name it well.** A short title that says the moment ("Airport, car at 5:15"). Use the note for the details and a link for the one thing people open when it rings.
 - **Hand back the share kit.** Every create returns the alarm's link (`lfg.gm/a/<code>`), a share picture with a QR code, and a ready-to-send message. Give all three to the person. If they ask you to send it (by email or text), send the link and the picture with the message.
@@ -49,8 +55,11 @@ One for each kind of alarm:
 - **Time:** "Wake me at 7 on weekdays with something motivational."
 - **Event link:** "Here's our Partiful invite: [link]. Ring everyone who joins two hours before." Luma and Partiful links work; paste the link and LFG reads the event's time.
 - **A post on X:** "Ring me when @NASA posts a launch date."
+- **A SoundCloud drop:** "Ring me when Fred again.. drops on SoundCloud." Find the artist first and let them pick.
 - **A stream going live:** "Wake me when [channel] goes live on Twitch."
 - **A token price:** "Ring me when SOL hits $150."
+- **Anything on the web:** "Ring me when this page says tickets are on sale: [link]."
+- **The sky:** "Ring me at golden hour in Lisbon every day."
 - **A trader:** "Wake me when @frankdegods buys over $10k or posts a thesis."
 - **A wallet:** "Ring me when this wallet sells over $5k: [address]."
 - **Anything (webhook):** "Make an alarm my uptime monitor can call when the site goes down, and give me the link."

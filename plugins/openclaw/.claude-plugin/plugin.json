@@ -1,6 +1,6 @@
 {
   "name": "lfg-alarm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Put a real alarm on your phone from OpenClaw, and on your friends', family's or community's phones, ringing together. For a time, an event, a post, a stream going live, a token price, or anything that can call a link.",
   "author": {
     "name": "LFG Alarm",

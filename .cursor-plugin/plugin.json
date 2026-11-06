@@ -1,7 +1,7 @@
 {
   "name": "lfg-alarm",
   "displayName": "LFG Alarm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set real alarms that ring on your phone, and on your friends' phones, from Cursor: wake-up times, events, a social media post, a price move, a public trade, or a webhook. Ring a phone when a build or job finishes.",
   "author": {
     "name": "LFG",

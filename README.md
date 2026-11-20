@@ -2,9 +2,9 @@
 
 # LFG Alarm MCP server
 
-Let your AI ring a real alarm on any phone or laptop, at any time or for any moment online.
+Give anything you care about an LFG link: a living link with a curiosity agent that keeps exploring and monitoring it, and reaches your phone with a quiet Drop, a notification or a real alarm.
 
-[LFG Alarm](https://lfg.gm) is a social alarm clock for iPhone and Android. Rocco, LFG's agent, monitors the web and wakes you, and your friends, when it matters: at a time, when a token moves, when someone posts or goes live, when a trader or a wallet trades, before an event, or when anything online calls a private link. This server lets any AI app that speaks MCP make and manage those alarms for you, in plain words.
+[LFG](https://lfg.gm) turns what you care about into an LFG link: an interest, an intent, an event or a moment you don't want to miss. Learning the cello, early-stage biotech startups, a creator's next video, a token's price, a 7am wake-up. Behind every LFG link is a curiosity engine: Rocco, LFG's agent, keeps exploring and monitoring it after the chat ends, keeps what he finds in its LFG stack, and reaches you the way you chose, Drop, Notify or Alarm, on your phone in the LFG Alarm app. Share a link and friends ride along. This server lets any AI app that speaks MCP make those links with you, plan what they explore or monitor, come back to read and add to what they know, and share them, in plain words.
 
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=lfg-alarm&config=eyJ1cmwiOiJodHRwczovL21jcC5sZmcuZ20ifQ%3D%3D) [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_LFG_Alarm-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=lfg-alarm&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.lfg.gm%22%7D)
 
@@ -95,27 +95,27 @@ Any MCP client that supports remote Streamable HTTP servers works with `https://
 | Tool | What it does |
 |---|---|
 | `set_time_alarm` | Set a time alarm, once or on repeat days |
-| `set_price_alarm` | Set a price alarm for a token (a target price or a percent move) |
+| `monitor_price` | Set a price alarm for a token (a target price or a percent move) |
 | `find_token` | Find a token to watch |
-| `set_post_alarm` | Ring when an X account posts something, or a Twitch or YouTube channel goes live or posts |
-| `set_drop_alarm` | Ring when an artist drops a new track, or only an album or EP, on SoundCloud |
+| `monitor_posts` | Ring when an X account posts something, or a Twitch or YouTube channel goes live or posts |
+| `monitor_new_music` | Ring when an artist drops a new track, or only an album or EP, on SoundCloud |
 | `find_soundcloud_artist` | Find the right artist on SoundCloud by name or link |
-| `set_trader_alarm` | Ring when a trader, a token's traders or a wallet buys or sells (Solana and EVM chains) |
+| `monitor_trades` | Ring when a trader, a token's traders or a wallet buys or sells (Solana and EVM chains) |
 | `set_event_alarm` | Ring before an event, from its page (Luma, Partiful, Eventbrite, Ticketmaster, Posh and more) |
 | `set_sun_alarm` | Ring at a sun or moon moment at a place: sunrise, golden hour, sunset, moonrise and more, or a sky event such as a meteor shower or a supermoon |
 | `set_tide_alarm` | Ring at a tide at the station nearest a place: low, high, a negative low or a king tide |
 | `sun_times` | Get a place's sun and moon times for a day |
 | `tide_times` | Get a day's high and low tides at the station nearest a place |
-| `set_watch_alarm` | Ring when a web page or a topic says what you are waiting for, with a brief if you want one |
+| `explore_or_monitor` | Ring when a web page or a topic says what you are waiting for, with a brief if you want one |
 | `set_webhook_alarm` | Ring when anything calls a private web address |
 | `ring_alarm` | Ring one of your webhook alarms now |
-| `remix_alarm` | Make your own copy of someone else's alarm, with your own rule |
-| `set_stack_trigger` | Add your own rule to someone else's alarm, ringing only you |
-| `update_alarm` | Change an alarm: time, title, sound, wallpaper, note, snooze, who is on it |
-| `turn_alarm_on_off` | Turn an alarm on or off |
-| `delete_alarm` | Delete an alarm |
-| `list_my_alarms` | List my alarms |
-| `show_alarm` | Show an alarm |
+| `remix_link` | Make your own copy of someone else's alarm, with your own rule |
+| `add_my_rule` | Add your own rule to someone else's alarm, ringing only you |
+| `update_link` | Change an alarm: time, title, sound, wallpaper, note, snooze, who is on it |
+| `turn_link_on_off` | Turn an alarm on or off |
+| `delete_link` | Delete an alarm |
+| `list_my_links` | List my alarms |
+| `show_link` | Show an alarm |
 | `search_library` | Search LFG's library of 500+ sounds and drawn wallpapers |
 | `search_gifs` | Search GIFs (from KLIPY) |
 | `set_gif` | Put a GIF on an alarm |
@@ -131,18 +131,18 @@ Any MCP client that supports remote Streamable HTTP servers works with `https://
 | `get_invite_card` | Get my invite link and invite card |
 | `use_invite_code` | Use a friend's invite code |
 | `open_link` | Open an LFG alarm link |
-| `join_alarm` | Join an alarm from its link |
+| `ride_link` | Join an alarm from its link |
 | `browse_discover` | Browse public alarms |
 | `read_comments` | Read an alarm's comments |
 | `post_comment` | Comment on an alarm |
-| `heart_alarm` | Heart an alarm |
+| `heart_link` | Heart an alarm |
 | `get_wake_board` | Get the wake board: who got up, and how fast |
 
 In Claude and ChatGPT, alarms also show as an interactive card (MCP Apps) to preview the ring and change the sound or wallpaper.
 
-## How alarms ring
+## How a link reaches you
 
-Time and event alarms ring as real alarms on both iPhone and Android. Post, price, trader and webhook alarms ring full screen on Android and as a time-sensitive alert on iPhone. Alarms also ring in an open LFG Alarm tab on a laptop.
+Each person picks how each link reaches them: **Drop** (quietly, into their Daily Drop), **Notify** (a notification) or **Alarm** (it rings). When it rings, time and event alarms ring as real alarms on both iPhone and Android. Post, price, trader and webhook alarms ring full screen on Android and as a time-sensitive alert on iPhone. Alarms also ring in an open LFG Alarm tab on a laptop.
 
 ## Plans
 

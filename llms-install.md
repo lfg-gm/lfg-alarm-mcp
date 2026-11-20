@@ -24,7 +24,7 @@ LFG Alarm is a hosted, remote MCP server. There is nothing to download, build or
    Or open MCP Servers, choose **Remote Servers**, name it `lfg-alarm`, paste `https://mcp.lfg.gm`, pick **Streamable HTTP** and add it.
 
 2. Connect. When the client asks, open the sign-in page and let the user sign in on lfg.gm. Do not ask the user for their password in chat.
-3. Check it works by calling `list_my_alarms`. A list (or "no alarms yet") means it is connected.
+3. Check it works by calling `list_my_links`. A list (or "no alarms yet") means it is connected.
 
 ## Requirements the user must meet
 
